@@ -4,7 +4,7 @@
 
 **A Raspberry Pi Configuration for Internet connectivity**
 
-I have had a couple Pis doing random Internet-related duties for years. It's finally time to formalize their configs and make all the DNS/ad-blocking/monitoring stuff encapsulated into one Ansible project.
+I have had a couple Pis doing random Internet-related duties for years. It's finally time to formalize their configs and make all the DNS/ad-blocking/monitoring/NAS/Media sharing stuff encapsulated into one Ansible project.
 
 So that's what this is.
 
@@ -39,7 +39,13 @@ The configuration is tested against Raspberry Pi OS, both 64-bit and 32-bit, and
 It should also work with Ubuntu for Pi, or Arch Linux, but has not been tested on other operating systems.
 
 ## Setup
+Automated installer:
+  1. Run `chmod +x setup.sh`
+  2. Run `./setup.sh`
+  3. Minimal interaction is needed. The first prompt will be for your Pi's IP address. Please know this beforehand (run `hostname -I`
+  4. The second prompt will be you to uncomment `connection=local` if you plan on using this exclusively internally.
 
+Manual Installation:
   1. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html). The easiest way (especially on Pi or a Debian system) is via Pip:
      1. (If on Pi/Debian): `sudo apt-get install -y python3-pip`
      2. (Everywhere): `pip3 install ansible`
